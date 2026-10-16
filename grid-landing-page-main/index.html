@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Grid landing page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<header>
+		<nav>
+			<img src="assets\images\favicon-32x32.png"/>
+			<p>Bridge Collective</p>
+		</nav>
+		<menu class="menu-wrapper">
+			<button id="menu" commandfor="mobile-menu" command="show-modal">
+				<span class="menu-icon">&#9776;</span>
+				<span class="close-icon">x</span>
+			</button>
+			<dialog id="mobile-menu" closedby="any">
+				<ul>
+					<li><a href="">About</a></li>
+					<li><a href="">Our Work</a></li>
+					<li><a href="">Partners</a></li>
+					<li><a href="">Annual Report</a></li>
+					<li><a href="">Donate</a></li>
+				</ul>
+			</dialog>
+		</menu>
+	</header>
+	<main>
+		<section class="hero">
+		  <!-- Hero -->
+		  <h1> A classroom for every child.</h1>
+
+		  <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.</p>
+		</section>
+		
+		<section class="stats-container">
+			  <!-- Stats -->
+			  <div class="stats-card">
+				<div class="stats-top">
+					<img src="assets\images\icon-sparkle.svg"/>
+					<p id="stat-number">2.4M</p>
+				</div>
+				
+				<div class="stats-detail">
+					<p>Students reached</p>
+					<p>Across 31 countries since 2011.</p>
+				</div>
+			  </div>
+			  
+			<div class="stats-card">
+				<div class="stats-top">
+					<img src="assets\images\icon-plus.svg"/> 
+					<p id="stat-number">1,284</p>
+				</div>
+				
+				<div class="stats-detail">
+					<p>Schools partnered</p>
+					<p>In 14 countries, from Kenya to Guatemala.</p>
+				</div>
+			</div>
+			  
+			<div class="stats-card">
+				<div class="stats-top"> 
+					<img src="assets\images\icon-arrow-right.svg"/> 
+					<p id="stat-number">38K</p>
+				</div>
+				
+				<div class="stats-detail">
+					<p>Teachers trained</p>
+					<p>Equipped with modern tools and methodology.</p>
+				</div>
+			</div>
+			
+			<div class="stats-card">
+				<div class="stats-top">
+					<img src="assets\images\icon-trending-up.svg"/> 
+					<p id="stat-number">3.1×</p>
+				</div>
+				
+				<div class="stats-detail">
+					<p>Graduation lift</p>
+					<p>Partner schools outperform national averages 3x.</p>
+				</div>
+			</div>  
+		</section>
+	</main>
+	<footer>
+	  <!-- Footer -->
+	  <p>© 2026 Bridge Collective</p>
+	  <p>Registered charity 12345678</p>
+	</footer>
+</body>
+</html>
