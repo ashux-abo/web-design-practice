@@ -67,7 +67,7 @@ h2 {
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 999px;
   font: inherit;                           /* buttons don't inherit the page font by default */
   font-weight: 600;
@@ -99,6 +99,10 @@ header {
 	height: 4rem;
 	align-items: center;
 	padding-inline: max(1.5rem);
+}
+
+.desktop{
+	display: none;
 }
 
 nav { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; }
@@ -196,15 +200,26 @@ dialog a:hover { opacity: 1; }             /* links brighten on hover */
 }
 
 /* hero content fades up one piece at a time on page load */
-.hero > * { animation: rise 0.7s ease both; }
-.hero > :nth-child(2) { animation-delay: 0.1s; }
-.hero > :nth-child(3) { animation-delay: 0.2s; }
-.hero > :nth-child(4) { animation-delay: 0.3s; }
+.hero > * {animation: rise 0.8s ease both;}
+.hero > :nth-child(2){animation-delay: 0.1s;}
+.hero > :nth-child(3){animation-delay: 0.2s;}
+.hero > :nth-child(4) {animation-delay: 0.3s;}
 
-@keyframes rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: none; }
+@keyframes rise{
+	from{opacity: 0; transform: translateY(16px);}
+	to{opacity: 1; transform: none;}
 }
+
+@keyframes appear{
+	from{opacity: 0; transform: translateX(-100px);}
+	to{opacity: 1; transform: translateX(0px);}
+}
+
+.card{
+	animation: appear linear;
+	animation-timeline: view();
+	animation-range: entry 0% cover 40%;
+	}
 
 .stats-container {
   display: grid;
@@ -389,6 +404,33 @@ footer {
 	padding: 1rem;
 }
 
+@keyframes scale-up{
+	from{opacity: 0; scale: 0.5;}
+	to{opacity: 1; scale: 1;}
+}
+
+@keyframes pulse{
+	0%, 100%{
+		border-color: rgba(242, 183, 5, 0.4);
+		border-shadow: 0 0 0 0 rgba(242, 183, 5, 0.5);
+	}
+	50%{
+		border-color: rgba(242, 183, 5, 1);
+		border-shadow: 0 0 0 10px rgba(242, 183, 5, 0);
+	}
+}
+
+.btn{
+	animation: pulse 2s ease-in-out infinite;
+}
+
+.about-points > div{
+	animation: scale-up linear both;
+	animation-timeline: view();
+	animation-range: entry 0% cover 40%;
+}
+
+
 .carousel-track{
 	display: flex;
 	width: max-content;
@@ -442,7 +484,28 @@ footer {
     border-top: none;
     border-left: 1px solid var(--line);
   }
-
+  
+  #menu{
+	  display: none;
+  }
+  
+  .desktop{display: inline;}
+  
+  .desktop > ul{
+	  display: flex;
+	  align-items: center;
+	  gap: 1rem;
+	  
+  }
+  
+  .desktop > ul > li:hover{
+	  transition: all 0.3s ease;
+  }
+  
+  .desktop > ul > li:hover{
+	  color: rgba(0,0,0,0.8);
+  }
+  
   .stats-card { min-height: 0; }
 
   .work, .about, .contact { padding-block: 5rem; }
