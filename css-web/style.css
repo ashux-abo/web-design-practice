@@ -1,0 +1,245 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+section[id] { scroll-margin-top: 4rem; }
+
+body{
+	display: grid;
+	grid-templat-columns: auto 1fr auto;
+	min-height: 100dvh;
+}
+
+header{
+	position: sticky;
+	top: 0;
+	padding: 1.5rem 1rem;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.close-icon{
+	display: none;
+}
+
+.menu-wrapper:has(dialog[open]) #menu .close-icon{
+	display: inline;
+}
+
+.menu-wrapper:has(dialog[open]) #menu .menu-icon{
+	display: none;
+}
+
+dialog{
+	position: fixed;
+	right: 0;
+	left: auto;
+	top: 64px;
+	width: 100%;
+	height: 10rem;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: start;
+	gap: 1rem;
+}
+
+nav{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+top{
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+}
+
+.top-grid{
+	display: grid;
+	grid-template-columns: 1fr;
+	border-top: 1px solid black;
+}
+
+.hero-actions{
+	margin-top: 5rem;
+}
+
+.hero{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 4rem 1rem;
+}
+.btn{
+	padding: 1.25rem 1rem;
+	border: 1px solid black;
+	border-radius: 999px;
+}
+
+.btn-primary{
+	background: black;
+	color: white;
+}
+
+.stats-container{
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.stats-card{
+	display: flex;
+	border-top: 1px solid black;
+	flex-direction: column;
+	min-height: 18rem;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.stats-top{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.work, .about, .contact{
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 2rem 1rem;
+	gap: 1rem;
+	border-top: 1px solid black;
+}
+
+.card-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	border-radius: 1rem;
+	min-height: 10rem;
+	border: solid 1px solid;
+}
+
+.about-points{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+.about-points>div{
+	padding: 1rem;
+	min-height: 10rem;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+form > button{
+	border: 1px solid black;
+	background: white;
+	padding: 1.5rem 1rem;
+	border-radius: 999px;
+}
+
+textarea, input{
+	border-radius: 1rem;
+	padding: 1.25rem 1rem;
+}
+
+footer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+
+@media (min-width: 769px){
+	.top-grid{
+		grid-template-columns: 1.1fr 1fr;
+		
+	}
+	
+	.stats-card{
+		border-top: none;
+		border-left: 1px solid black;
+		}
+		
+	.stats-card:nth-child(n + 3){
+		border-top: 1px solid black;
+	}
+	
+	.stats-container{
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+	
+	.card-grid{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		padding: 1rem;
+	}
+	
+	.about-points{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	
+	.contact{
+		display: grid;
+		grid-template-columns: 50% 50%;
+	}
+	
+	.work{
+		padding: 4rem 1rem;
+	}
+	
+	dialog{
+		inset: 4rem 1rem auto auto;
+		width: 250px;
+		height: auto;
+	}
+	
+	dialog ul{
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: 1rem;
+		padding: 1.5rem;
+	}
+	
+	dialog a {
+		font-size: 1rem;
+	}
+	
+}

@@ -31,6 +31,7 @@ body {
   min-height: 100dvh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-auto-columns: minmax(0, 1fr);
   background: var(--blue);
   color: white;
   font-family: "Inter", sans-serif;
@@ -90,17 +91,14 @@ h2 {
 
 /* ============ HEADER ============ */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: var(--header-height);
-  padding-inline: var(--gutter);
-  background: rgba(39, 84, 253, 0.8);      /* semi-transparent blue... */
-  backdrop-filter: blur(12px);             /* ...with blurred content behind it (frosted glass) */
-  border-bottom: 1px solid var(--line);
+	display: flex;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	height: 4rem;
+	align-items: center;
+	padding-inline: max(1.5rem);
 }
 
 nav { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; }
@@ -187,6 +185,7 @@ dialog a:hover { opacity: 1; }             /* links brighten on hover */
   font-weight: 300;
   opacity: 0.9;
 }
+
 
 .hero-actions {
   display: flex;
@@ -372,6 +371,40 @@ footer {
   font-size: 0.8rem;
   opacity: 0.85;
 }
+
+.carousel-container{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 1rem;
+}
+
+.carousel-track > p{
+	flex: 0 0 auto;
+	width: 250px;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.carousel-track{
+	display: flex;
+	width: max-content;
+	animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll{
+	0%{transform: translateX(0);}
+	100%{transform: translateX(-50%);}
+}
+
+.carousel-container:hover .carousel-track{
+	animation-play-state: paused;
+	cursor: pointer;
+}
+
 
 /* ============ DESKTOP (769px+): ONLY ADDITIONS ============ */
 @media (min-width: 769px) {
